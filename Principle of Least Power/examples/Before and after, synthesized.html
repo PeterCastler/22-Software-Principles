@@ -1,0 +1,17 @@
+<!-- Before: JavaScript controls a native disclosure interaction. -->
+<button id="toggle" aria-expanded="false">Details</button>
+<div id="details" hidden>Shipping takes two business days.</div>
+<script>
+  const button = document.querySelector("#toggle");
+  const details = document.querySelector("#details");
+  button.addEventListener("click", () => {
+    details.hidden = !details.hidden;
+    button.setAttribute("aria-expanded", String(!details.hidden));
+  });
+</script>
+
+<!-- After: HTML already defines the complete interaction and accessibility. -->
+<details>
+  <summary>Details</summary>
+  <p>Shipping takes two business days.</p>
+</details>
