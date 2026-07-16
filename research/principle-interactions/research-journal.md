@@ -565,3 +565,39 @@ Artifacts updated:
 - `research/principle-interactions/research-journal.md`
 
 Next step: Study complete. Any later `AGENTS.md` authoring should consume the validated bundle instructions without silently broadening their objectives or dropping their counterexamples.
+
+## J-20260715-2317-14
+
+Phase: Post-study operational handoff update
+
+Objective: Apply the supplied 2026 consensus checklist to the way this library is consumed without reopening or reclassifying the frozen interaction research.
+
+Work performed:
+
+- Replaced the README's planned static `AGENTS.md` distillation with a task-specific `CONTRACT.md` workflow.
+- Added a reusable contract template capped below 100 lines.
+- Required any downstream `SKILL.md` packaging to stay below 100 lines and move background material into linked references.
+- Required explicit objective, scope, non-goals, acceptance evidence, verification, and a dedicated `Forbidden` section.
+- Framed validated bundle instructions as candidate contract clauses and required their counterexamples to remain visible as boundary checks.
+- Preserved the journal's earlier `AGENTS.md` sentence as historical, append-only evidence; this entry supersedes that handoff direction.
+
+Operational decision:
+
+- Generate a fresh `CONTRACT.md` immediately before each implementation task.
+- Use the smallest applicable set of validated bundle clauses; do not concatenate the library into standing repository instructions.
+- Remove aspirational prose and keep only statements that constrain a decision or make completion observable.
+- Keep any derived `SKILL.md` focused on actionable routing and decision rules; link to this library for supporting research.
+- State likely failure modes as strict negative constraints, including protected files, APIs, data, and behavior.
+- Keep the complete contract below 100 lines and do not carry it forward as passive guidance for another task.
+
+Research status: Unchanged. No profile, pair classification, evidence grade, bundle membership, counterexample, dataset, or integrity-tracked principle chapter was modified.
+
+Artifacts updated:
+
+- `README.md`
+- `CONTRACT.template.md`
+- `Principle Interaction Guide.md`
+- `research/principle-interactions/bundle-assessments.md`
+- `research/principle-interactions/research-journal.md`
+
+Next step: For the next implementation task, generate `CONTRACT.md` from the template only after the task's current evidence and boundaries are known.

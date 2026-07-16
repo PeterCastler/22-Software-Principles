@@ -842,6 +842,8 @@ Pair-level citations use source IDs in each dossier. Provenance, role, supported
 
 These bundles were derived only after the 78-edge interaction dataset was frozen and the bundle-free core guide passed verification. Each has one objective, three to six principles, a connected graph of published non-Overlap relationships, no unresolved Tension or Conflict, an application order, a counterexample, and dossier traceability. Accepted and rejected candidates are documented in [bundle assessments](research/principle-interactions/bundle-assessments.md).
 
+Use a bundle's text block only as a candidate clause in a task-specific `CONTRACT.md`, generated immediately before implementation. Select the smallest applicable set, retain its counterexample as a boundary check, add task-specific acceptance and `Forbidden` sections, and keep the complete contract below 100 lines. Do not concatenate this catalog into standing repository instructions.
+
 ### B01 · Evidence-led minimal design
 
 **Objective:** Deliver the smallest present solution while preventing premature or wrongly scoped abstraction.  

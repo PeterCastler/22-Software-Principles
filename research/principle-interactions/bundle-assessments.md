@@ -32,7 +32,7 @@ The graph is connected through non-Overlap edges and contains no frozen Tension 
 3. Let early repeated shapes remain local while their meanings and variation emerge.
 4. After repeated evidence, centralize only knowledge that has one owner and should change together.
 
-**Combined agent instruction:**
+**Candidate contract clause:**
 
 ```text
 Implement only the current complete requirement using the clearest adequate design.
@@ -70,7 +70,7 @@ The graph is connected through Sequencing, Enablement, and Reinforcement; no mem
 3. Use the least expressive adequate row format instead of callbacks or an embedded language.
 4. Parse external rows and keys once into closed, precise values before lookup or interpretation.
 
-**Combined agent instruction:**
+**Candidate contract clause:**
 
 ```text
 Use a table only after real cases reveal one stable algorithm with regular variation.
@@ -109,7 +109,7 @@ The graph is connected without relying on the rejected Functional Core/Shell ↔
 3. Call deterministic policy through domain-shaped inputs and narrow capabilities.
 4. Interpret the policy result and perform effects in the shell.
 
-**Combined agent instruction:**
+**Candidate contract clause:**
 
 ```text
 Keep I/O and vendor details in the shell. Parse their weak values at the adapter into
@@ -148,7 +148,7 @@ The graph includes one Overlap edge but does not rely on Overlap for connectivit
 3. Delete the implementation and its obsolete flags, configuration, tests, documentation, and dependencies.
 4. Keep incidental cleanup within the touched path; schedule unfamiliar system-wide removal separately.
 
-**Combined agent instruction:**
+**Candidate contract clause:**
 
 ```text
 Within the touched path, preserve the current contract and remove only machinery proven
@@ -185,7 +185,7 @@ The graph is connected through non-Overlap edges. P227 is visibly retained at it
 3. Let the owner decide contextual validity and perform or return a valid transition.
 4. Return an explicit domain outcome; do not expose correlated setters or nested collaborators.
 
-**Combined agent instruction:**
+**Candidate contract clause:**
 
 ```text
 Parse raw input into a precise command at the boundary, pass that command directly to
@@ -224,7 +224,7 @@ The graph contains one Overlap edge but has multiple non-Overlap connections. It
 3. Implement the detail as a composed adapter at the application edge, without a speculative hierarchy.
 4. Keep the collaborator graph private; policy talks only to the immediate domain capability.
 
-**Combined agent instruction:**
+**Candidate contract clause:**
 
 ```text
 Introduce an architectural boundary only for a demonstrated independent change or volatile
