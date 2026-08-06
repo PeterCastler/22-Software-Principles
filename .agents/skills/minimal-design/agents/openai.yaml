@@ -1,0 +1,6 @@
+interface:
+  display_name: "Minimal Design"
+  short_description: "Filter software decisions before coding"
+  default_prompt: "Use $minimal-design to triage this software task, apply only justified design guidance, and distill durable knowledge at closeout."
+policy:
+  allow_implicit_invocation: true
