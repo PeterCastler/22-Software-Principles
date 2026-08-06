@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This guide translates the library's 22 software principles into operational guidance for AI-agent projects. It explains where guidance belongs, when it should be activated, and how to keep a principle from becoming an unconditional slogan.
+This guide explains how [`$minimal-design`](.agents/skills/minimal-design/SKILL.md) filters software decisions, how its automatic recall is reinforced, and where temporary reasoning or durable knowledge belongs. The skill applies the least justified process rather than making every software request perform architecture work.
 
 The standalone principle chapters remain authoritative for definitions, application methods, limits, and sources. The [Principle Interaction Guide](Principle%20Interaction%20Guide.md) remains authoritative for pair relationships, evidence grades, and validated bundles. This document concerns packaging and workflow integration only.
 
@@ -11,24 +11,52 @@ The standalone principle chapters remain authoritative for definitions, applicat
 | File | Use it for | Do not use it for |
 |---|---|---|
 | `AGENTS.md` | Stable instructions that should govern nearly every task in a repository or subtree. | Long explanations, conditional checklists, or all 22 principles copied wholesale. |
-| `SKILL.md` | An opt-in procedure with a recognizable trigger, sequence, checks, and linked references. | Passive background reading or standing rules that always apply. |
-| `CONTRACT.md` | One task's current objective, scope, evidence, selected principles, acceptance, verification, and forbidden changes. | Reusable policy or instructions carried unchanged into later tasks. |
+| `SKILL.md` | A conditionally activated procedure with a recognizable trigger, sequence, checks, and linked references. | Passive background reading or unconditional project policy. |
+| `CONTRACT.md` | An explicitly requested shared export of one consequential task's current design contract. | A mandatory artifact, reusable policy, or unchanged input to later tasks. |
 | `CONTRACTS.md` | A durable catalog of several named API, schema, security, migration, compatibility, or subsystem contracts. | A pluralized task brief or a substitute for the current task's `CONTRACT.md`. |
 
 Use this test:
 
 1. If the rule remains true for almost every task in a subtree, put a concise operational form in the nearest `AGENTS.md`.
 2. If application requires a trigger, diagnostic method, tools, or specialized sequence, put the method in a `SKILL.md` and link its supporting references.
-3. If applicability depends on current evidence, risk, scope, or a counterexample, record the decision in the task's `CONTRACT.md`.
+3. If applicability depends on current evidence, risk, scope, or a counterexample, keep it in the current conversation by default; export `CONTRACT.md` only when the user requests a shared artifact.
 4. If several durable external or domain promises must be named and maintained together, document them in `CONTRACTS.md` and make the owning `AGENTS.md` say when they must be consulted.
 
 Repository, platform, safety, and applicable `AGENTS.md` instructions remain authoritative. A skill or task contract may specialize or narrow them but must not weaken them.
 
-## Task contracts and durable contracts
+## Decision-filtration workflow
 
-Generate `CONTRACT.md` immediately before implementation from [CONTRACT.template.md](CONTRACT.template.md). Select only principles whose preconditions are demonstrated, preserve their boundary or counterexample, and keep the completed contract below 100 lines.
+The skill routes each software-changing, debugging, architectural, or review request through the following sequence:
 
-Create `CONTRACTS.md` only when a durable boundary owns multiple independently named commitments. Each entry should identify its owner, consumers, compatibility promise, permitted changes, verification, and deprecation path. Link rather than duplicate those commitments from `AGENTS.md`, skills, and task contracts.
+1. **Prompt triage:** a clearly mechanical request does not load principle research.
+2. **Mechanical inspection:** inspect applicable instructions, the named location, and the nearest relevant test or contract. Fast-exit if no design-bearing evidence appears.
+3. **Targeted reconnaissance:** for uncertain work, inspect relevant symbols, the nearest implementation, direct callers, tests, contracts, and conventions. Broaden only when evidence requires it.
+4. **Final classification:** Mechanical work proceeds directly; Normal work uses an ephemeral micro-brief; Consequential work uses an ephemeral design contract.
+5. **Implementation:** follow the active brief while language-, framework-, security-, testing-, and artifact-specific skills retain control of their procedures.
+6. **Closeout:** review the diff, brief, unplanned changes, and verification evidence, then distill durable knowledge.
+
+“No principle or bundle applies” is a valid and preferred result. Use at most one primary bundle unless evidence establishes two distinct decision surfaces. The routing formats and loading rules live in the skill's [workflow reference](.agents/skills/minimal-design/references/workflow.md).
+
+## Decision Gate
+
+A Decision Gate is an interruption, not a fourth and larger document tier. Use it only when a consequential choice changes user-visible behavior, compatibility, data retention, destructive migration, supported platforms, operational policy, or a comparable product promise; repository evidence cannot determine the answer; and no safe reversible default exists.
+
+Ask the smallest product-facing question and pause before the first action that would commit to an answer. Reversible technical choices, ordinary implementation details, design-principle selection, and engineering trade-offs remain agent responsibilities.
+
+## Temporary and durable artifacts
+
+Keep micro-briefs and design contracts in conversation. Use [CONTRACT.template.md](CONTRACT.template.md) only when the user explicitly requests a collaborative export for consequential work, and keep that export below 100 lines. A previous brief or contract is non-authoritative unless current instructions link it.
+
+Promote a learned fact only when all four conditions hold:
+
+- it remains relevant beyond the completed task;
+- future work could make a wrong decision without it;
+- it is stable enough to be policy or maintained documentation rather than speculation; and
+- an existing authoritative document or clear new owner exists.
+
+Write only the distilled fact into the nearest authority. Update or remove stale documentation when it is in scope and contradicted by evidence; otherwise ignore it as authority and report the contradiction.
+
+Create `CONTRACTS.md` only when a durable boundary owns multiple independently named commitments. Each entry should identify its owner, consumers, compatibility promise, permitted changes, verification, and deprecation path.
 
 ## Recommended global operating rail
 
@@ -56,18 +84,19 @@ Place specialized principle guidance in a child `AGENTS.md` when a folder is a d
 
 Prefer the closest applicable child instruction over broad root rules. Do not create a child file for a temporary task or repeat parent guidance without a local specialization.
 
-## Recommended skill packaging
+## Recall and portable installation
 
-Start with the six validated bundles rather than 22 separate skills. Keep each `SKILL.md` below 100 lines and put research, long examples, and evidence in linked references.
+The public package lives at [`.agents/skills/minimal-design/`](.agents/skills/minimal-design/). Its broad frontmatter description is the primary automatic trigger and `policy.allow_implicit_invocation` is enabled. The optional [`global-agents-activation.md`](.agents/skills/minimal-design/assets/global-agents-activation.md) block is a backup instruction for a root or global `AGENTS.md`; it reinforces invocation, fast exit, re-entry on new evidence, Decision Gate ownership, and closeout distillation without duplicating the skill.
 
-1. [B01 · Evidence-led minimal design](Principle%20Interaction%20Guide.md#b01--evidence-led-minimal-design): KISS, YAGNI, Rule of Three, and DRY.
-2. [B02 · Constrained data for regular variation](Principle%20Interaction%20Guide.md#b02--constrained-data-for-regular-variation): Rule of Three, Data-Driven Design, DRY, Least Power, Parse Don't Validate, and precise states.
-3. [B03 · Trusted functional boundary](Principle%20Interaction%20Guide.md#b03--trusted-functional-boundary): separation, functional core/imperative shell, dependency inversion, boundary parsing, and precise states.
-4. [B04 · Evidence-backed deletion](Principle%20Interaction%20Guide.md#b04--evidence-backed-deletion): KISS, Negative Code, dead-code elimination, trusted primitives, and bounded cleanup.
-5. [B05 · Encapsulated domain commands](Principle%20Interaction%20Guide.md#b05--encapsulated-domain-commands): boundary parsing, precise states, Tell Don't Ask, and Law of Demeter.
-6. [B06 · Minimal policy-owned architecture](Principle%20Interaction%20Guide.md#b06--minimal-policy-owned-architecture): separation, SRP, composition, dependency inversion, and Law of Demeter.
+Install the GitHub path `PeterCastler/miniCode/.agents/skills/minimal-design` with `$skill-installer` once in each Codex environment, then start a new session. Account-level automatic syncing is not assumed. The standalone skill remains the v1 source of truth; defer a plugin wrapper until public distribution or managed updating justifies one.
 
-Standalone skills are justified when the workflow has a distinctive trigger or artifact. Strong candidates include incident diagnosis with Occam's Razor, CLI design with the Unix Philosophy, convention-aware scaffolding, feature retirement and liveness investigation, platform-primitive replacement, and domain or boundary modeling.
+## Trigger evaluation
+
+The durable [36-case golden set](evaluation/trigger-cases.jsonl) covers 12 design-bearing software prompts, 8 mechanical fast exits, 8 software-adjacent negatives, and 8 non-software or competing-domain negatives. It includes four product-ambiguity Decision Gates paired with engineering-only controls.
+
+Forward tests use fresh disposable Codex sessions and repositories below `evaluation/.tmp/`. Test metadata-only invocation first; retest only false negatives and borderline cases with the activation asset. Record the skill hash, model, Codex version, date, scoring method, and asset presence. Change one metadata field or instruction region per cycle, for at most three focused cycles.
+
+Acceptance requires at least 11/12 design activations, 7/8 correct mechanical activations and fast exits, no more than 1/8 software-adjacent captures, no non-software captures, valid gates for every product-owned ambiguity, no gates for engineering controls, no persisted brief or contract in any fixture, and no non-software false positive introduced by the activation asset.
 
 ## Principle-by-principle integration
 
@@ -295,7 +324,7 @@ Standalone skills are justified when the workflow has a distinctive trigger or a
 
 - **All principles in root `AGENTS.md`:** Conditional design guidance becomes permanent noise and conflicting slogans. Keep the root rail short and move specialized rules closer to their decision surface.
 - **A handbook-sized `SKILL.md`:** Passive research crowds out actionable routing. Keep the skill concise and link to the chapters and interaction guide.
-- **A reusable `CONTRACT.md`:** A carried-forward task brief preserves stale assumptions. Generate a fresh contract from current evidence for every implementation task.
+- **A mandatory or reusable `CONTRACT.md`:** Writing every transient decision into the repository creates stale authority. Keep reasoning ephemeral; export a fresh consequential contract only when collaboration requires it.
 - **`CONTRACTS.md` as a policy dump:** Durable contracts need named owners, consumers, compatibility promises, verification, and deprecation paths; otherwise use ordinary documentation.
 - **DRY from textual similarity:** Coincidentally similar code may have different owners. Centralize only one changing fact.
 - **Rule of Three as arithmetic:** Three occurrences do not prove one abstraction; one authoritative protocol may justify centralization before three.

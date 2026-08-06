@@ -1,27 +1,31 @@
-# Minimal Code Principles Library
+# Minimal Design
 
-This repository is an offline-first reference for designing software with fewer concepts, dependencies, branches, abstractions, and maintenance obligations. Its validated principles are inputs to short, task-specific `CONTRACT.md` briefs written immediately before implementation. They are not intended to be distilled wholesale into a static `AGENTS.md` file.
+This repository's primary deliverable is [`$minimal-design`](.agents/skills/minimal-design/SKILL.md), a portable Codex decision-filtration skill for software work. Its observable job is to apply the least justified amount of design process, keep engineering choices with the agent, surface only unresolved product choices to the user, and preserve only knowledge future developers truly need.
 
-The completed cross-principle study, evidence grades, conflict resolutions, and validated bundles are in the [Principle Interaction Guide](Principle%20Interaction%20Guide.md). Its full proof ledger is under [`research/principle-interactions/`](research/principle-interactions/).
+The 22 software principles, six validated bundles, interaction boundaries, tension resolutions, and rejected combinations are reasoning substrate rather than 22 standing rules. Their completed study is in the [Principle Interaction Guide](Principle%20Interaction%20Guide.md), with its proof ledger under [`research/principle-interactions/`](research/principle-interactions/).
 
-## Using these principles with AI agents
+## Runtime shape
 
-Use the [Agent Workflow Integration Guide](Agent%20Workflow%20Integration%20Guide.md) to decide where principle guidance belongs. Keep stable repository or subtree rules concise in `AGENTS.md`, package conditional procedures and routing in `SKILL.md`, and record evidence-dependent implementation decisions in a fresh task-specific `CONTRACT.md`. Use `CONTRACTS.md` only for a durable catalog of several named interface or domain contracts.
+1. Trigger broadly for software creation, change, debugging, refactoring, deletion, migration, architecture, or review.
+2. Fast-exit after narrow inspection when the task is genuinely mechanical.
+3. For uncertain work, inspect the nearest implementation, direct consumers, tests, contracts, and conventions before classifying it.
+4. Work directly for Mechanical tasks, keep a short ephemeral micro-brief for Normal tasks, and keep an ephemeral design contract for Consequential tasks.
+5. Interrupt with a Decision Gate only when repository evidence cannot resolve a consequential product choice and no safe reversible default exists.
+6. Close by reviewing the implementation and verification evidence, then distill only stable knowledge that has a clear authoritative owner.
 
-Do not install all 22 principles as standing instructions. Select the smallest applicable guidance, retain its limits and counterexamples, and keep detailed research in the linked principle chapters and interaction guide.
+Briefs and design contracts stay in conversation by default. The [contract template](CONTRACT.template.md) is an optional export for consequential work when the user explicitly wants a shared file; it is not a mandatory repository artifact. Old task briefs are historical evidence, not current authority, unless active instructions link them.
 
-## Task-contract workflow
+Use the [Agent Workflow Integration Guide](Agent%20Workflow%20Integration%20Guide.md) for the full routing model, Decision Gate boundary, durable-promotion test, and interaction with `AGENTS.md`, specialist skills, and durable contracts.
 
-1. Immediately before implementation, copy [`CONTRACT.template.md`](CONTRACT.template.md) to the task root as `CONTRACT.md` and replace every placeholder with facts from the current task.
-2. Keep the completed contract below 100 lines. Remove values statements and background that do not change an implementation decision.
-3. Select only the relevant validated bundle clauses and preserve each selected bundle's boundary or counterexample.
-4. State the objective, allowed scope, non-goals, acceptance evidence, and verification commands explicitly.
-5. Give `Forbidden` its own section. Write concrete negative constraints for likely failure modes, including files or behavior that must not change.
-6. Regenerate the contract for every task. A previous task's contract is evidence, not standing instructions for the next task.
+## Install in another Codex environment
 
-Repository, platform, and safety policies still apply. A task contract may narrow those constraints but must never weaken or override them.
+Installation is one-time per Codex environment; account-level synchronization is not assumed. Ask Codex:
 
-If this library is packaged as a `SKILL.md`, keep that file below 100 lines and limit it to actionable routing and decision rules. Put research background, long examples, and evidence in linked reference files instead of turning the skill into a passive handbook.
+```text
+Use $skill-installer to install minimal-design from PeterCastler/miniCode at .agents/skills/minimal-design.
+```
+
+Start a new Codex session after installation. For a stronger backup trigger, optionally copy the concise [`global-agents-activation.md`](.agents/skills/minimal-design/assets/global-agents-activation.md) block into that machine's global `AGENTS.md`. The standalone package is the v1 source of truth; a plugin wrapper is intentionally deferred until managed public distribution or updating is needed.
 
 ## What “minimal” means here
 

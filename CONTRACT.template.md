@@ -1,24 +1,36 @@
-# Task Contract
+# Consequential Design Contract
 
-> Generate `CONTRACT.md` from this template immediately before implementation.
-> One task only; fewer than 100 lines; remove every placeholder and unused section.
+> Optional shared export only. Create this file when the user explicitly requests a
+> collaborative artifact for consequential work. Keep it below 100 lines, replace
+> every placeholder, and delete unused sections. It is not standing authority for
+> later tasks unless an active instruction links it.
 
-## Objective
+## Requirement
 
-- Outcome: `<one observable result>`
-- Current requirement: `<what must be true now>`
+- Current complete outcome: `<observable result>`
+- Decision surface: `<consequential choice this contract constrains>`
+
+## Alternatives
+
+- Conservative option: `<smallest adequate existing-shape option>`
+- Proposed option: `<recommended option and lifecycle consequence>`
+- Evidence: `<code, tests, trace, schema, or authoritative requirement>`
+- Assumptions: `<facts not yet established>`
+
+## Guidance
+
+- Relevant principle or primary bundle: `<none, one principle, or B01-B06>`
+- Boundary or counterexample: `<stopping condition that must remain visible>`
 
 ## Scope
 
-- May change: `<files, components, or behavior>`
+- May change: `<files, components, data, or behavior>`
 - Must preserve: `<public, data, security, accessibility, and operational contracts>`
-- Non-goals: `<plausible work that is intentionally excluded>`
+- Non-goals: `<plausible work intentionally excluded>`
 
-## Decisions
+## Resolved Product Decisions
 
-- Relevant bundle clause(s): `<B01-B06, only when their preconditions hold>`
-- Evidence: `<current code, tests, issue, trace, or authoritative requirement>`
-- Boundary or counterexample: `<why the selected guidance applies here>`
+- `<Decision Gate question and user-owned answer, or "none">`
 
 ## Acceptance
 
@@ -32,12 +44,9 @@
 
 ## Forbidden
 
-- NEVER broaden the objective or add speculative capability.
-- NEVER rewrite an entire file when a surgical edit can satisfy the contract.
-- NEVER abstract predicted reuse; require repeated evidence unless one authoritative
-  protocol, security invariant, or regulated rule already exists.
-- NEVER delete behavior from line count or a single reference search; prove it dead
-  or prove its replacement semantically adequate.
+- NEVER broaden the requirement or add speculative capability.
 - NEVER weaken a preserved contract to make verification pass.
-- NEVER apply a bundle clause while omitting its boundary or counterexample.
+- NEVER abstract predicted reuse without repeated evidence or an existing authority.
+- NEVER delete behavior without proving it dead or semantically replaced.
+- NEVER omit the selected guidance's boundary or counterexample.
 - NEVER modify `<task-specific protected files, APIs, data, or behavior>`.
