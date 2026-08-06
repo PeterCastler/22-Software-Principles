@@ -1,8 +1,27 @@
 # Minimal Code Principles Library
 
-This repository is an offline-first reference for designing software with fewer concepts, dependencies, branches, abstractions, and maintenance obligations. It is research material for a later phase in which compatible principles may be distilled into project-level `AGENTS.md` instructions. It does **not** yet contain those agent instructions.
+This repository is an offline-first reference for designing software with fewer concepts, dependencies, branches, abstractions, and maintenance obligations. Its validated principles are inputs to short, task-specific `CONTRACT.md` briefs written immediately before implementation. They are not intended to be distilled wholesale into a static `AGENTS.md` file.
 
 The completed cross-principle study, evidence grades, conflict resolutions, and validated bundles are in the [Principle Interaction Guide](Principle%20Interaction%20Guide.md). Its full proof ledger is under [`research/principle-interactions/`](research/principle-interactions/).
+
+## Using these principles with AI agents
+
+Use the [Agent Workflow Integration Guide](Agent%20Workflow%20Integration%20Guide.md) to decide where principle guidance belongs. Keep stable repository or subtree rules concise in `AGENTS.md`, package conditional procedures and routing in `SKILL.md`, and record evidence-dependent implementation decisions in a fresh task-specific `CONTRACT.md`. Use `CONTRACTS.md` only for a durable catalog of several named interface or domain contracts.
+
+Do not install all 22 principles as standing instructions. Select the smallest applicable guidance, retain its limits and counterexamples, and keep detailed research in the linked principle chapters and interaction guide.
+
+## Task-contract workflow
+
+1. Immediately before implementation, copy [`CONTRACT.template.md`](CONTRACT.template.md) to the task root as `CONTRACT.md` and replace every placeholder with facts from the current task.
+2. Keep the completed contract below 100 lines. Remove values statements and background that do not change an implementation decision.
+3. Select only the relevant validated bundle clauses and preserve each selected bundle's boundary or counterexample.
+4. State the objective, allowed scope, non-goals, acceptance evidence, and verification commands explicitly.
+5. Give `Forbidden` its own section. Write concrete negative constraints for likely failure modes, including files or behavior that must not change.
+6. Regenerate the contract for every task. A previous task's contract is evidence, not standing instructions for the next task.
+
+Repository, platform, and safety policies still apply. A task contract may narrow those constraints but must never weaken or override them.
+
+If this library is packaged as a `SKILL.md`, keep that file below 100 lines and limit it to actionable routing and decision rules. Put research background, long examples, and evidence in linked reference files instead of turning the skill into a passive handbook.
 
 ## What “minimal” means here
 
