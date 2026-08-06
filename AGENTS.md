@@ -80,7 +80,8 @@ When the user requests a durable behavior change, record it here or in the relev
 
 ## Child DOX Index
 
-- Root-owned files cover the library overview, cross-principle guide, repository-wide templates, and repository configuration.
+- Root-owned files cover the library overview, AI-agent workflow integration guide, cross-principle guide, repository-wide templates, and repository configuration.
+- [Agent Workflow Integration Guide.md](Agent%20Workflow%20Integration%20Guide.md) — operational placement of principles in agent instructions, skills, and contracts.
 - [Boy Scout Rule/AGENTS.md](Boy%20Scout%20Rule/AGENTS.md) — bounded incremental cleanup.
 - [Composition over Inheritance/AGENTS.md](Composition%20over%20Inheritance/AGENTS.md) — behavior assembly through composition.
 - [Convention over Configuration/AGENTS.md](Convention%20over%20Configuration/AGENTS.md) — shared defaults and explicit overrides.
