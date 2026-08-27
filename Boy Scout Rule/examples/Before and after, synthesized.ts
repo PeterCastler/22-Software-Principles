@@ -1,5 +1,4 @@
-// Before: the requested change is to support a configurable timeout, but the
-// touched function also has a misleading name and magic status string.
+// Before: the requested change is to support a configurable timeout, but the touched function also has a misleading name and magic status string.
 async function doIt(url: string) {
   const response = await fetch(url);
   if (response.status === 200) return response.json();
@@ -15,5 +14,4 @@ async function fetchJson(url: string, timeoutMs: number) {
   throw new Error(`Request failed with status ${response.status}`);
 }
 
-// Do not also redesign every HTTP caller in the repository without separate
-// scope, evidence, and review.
+// Do not also redesign every HTTP caller in the repository without separate scope, evidence, and review.
